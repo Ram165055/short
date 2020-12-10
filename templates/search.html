@@ -1,0 +1,16 @@
+{% load static %}
+{% static "pics" as baseUrl %}
+this is search
+<!-- {%for dest in dests %} -->
+<!-- <p>{{request.user.username}}</p> -->
+<!-- <P><img src="{{dest.img.url}}" alt=""></P> -->
+<!-- <P>{{request.user.email}}</P> -->
+<!-- <p>{{dest.desc}}</p>
+
+ {% endfor %} -->
+<form class="abc" action="searchresult" method="post">
+  {% csrf_token %}
+  <input type="text" name="name" value="name">
+  <input type="submit" name="submit" value="submit">
+
+</form>

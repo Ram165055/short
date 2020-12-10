@@ -1,0 +1,457 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Short_job</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="{% static 'site.webmanifest' %}">
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slicknav.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/progressbar_barfiller.css' %}">
+    <link rel="stylesheet" href="{% static 'css/gijgo.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animated-headline.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+      <!-- ? Preloader Start -->
+      <div id="preloader-active">
+          <div class="preloader d-flex align-items-center justify-content-center">
+              <div class="preloader-inner position-relative">
+                  <div class="preloader-circle"></div>
+                  <div class="preloader-img pere-text">
+                      <img src="{% static 'img/logo/loder.png' %}" alt="">
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- Preloader Start -->
+    <header>
+        <!-- Header Start -->
+        <div class="header-area header-transparent">
+            <div class="main-header ">
+                <div class="header-bottom  header-sticky">
+                    <div class="container-fluid">
+                        <div class="row align-items-center">
+                            <!-- Logo -->
+                            <div class="col-xl-2 col-lg-2">
+                                <div class="logo">
+                                    <a href="/"><img src="{% static 'img/logo/logo.png' %}" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-xl-10 col-lg-10">
+                                <div class="menu-wrapper  d-flex align-items-center justify-content-end">
+                                    <!-- Main-menu -->
+                                    <div class="main-menu d-none d-lg-block">
+                                        <nav>
+                                            <ul id="navigation">
+                                                <!-- <li><a href="/">Home</a></li> -->
+                                                {% if user.is_authenticated %}
+                                                <li><a href="#">Pages</a>
+                                                    <ul class="submenu">
+                                                        <li><a href="about">about</a></li>
+                                                        <li><a href="blog">Blog</a></li>
+                                                    </ul>
+                                                </li>
+                                                
+                                                <li>Hello,{{user.username}}</li>
+                                                <li><a href="joblist">Joblist</a></li>
+                                                <li><a href="logout">Logout</a></li>
+                                                {% else %}
+
+                                                <li><a href="login">Log in</a></li>
+                                                {% endif %}
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                    <!-- Header-btn -->
+                                    <div class="header-right-btn d-none d-lg-block ml-65">
+                                        <!-- <a href="contact" class="border-btn">Contact us</a> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Mobile Menu -->
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header End -->
+    </header>
+    <!-- header end -->
+    <main>
+        <!-- mainView Area Start-->
+        <div class="slider-area">
+            <div class="single-slider slider-height d-flex align-items-center">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-8 col-lg-9">
+                            <!-- Hero Caption -->
+                            <div class="hero__caption">
+                                <h1>Find your short job.</h1>
+                                <p>fill the fields to find appropriate jobs in your local nearby locations.</p>
+                                <p>(for now the area of job hosting is limited, soon will be diversify.)</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-11 col-lg-12">
+                            <!--front form -->
+                            <!--form action needed to be filled douring backend programming -->
+
+
+
+                            <!-- <form action="search" class="search-box" method="post"> -->
+                               {% csrf_token %}
+                                <!-- <div class="input-form"> -->
+                                    <!-- <input type="text" name="name" placeholder="Job title or keywords"> -->
+                                    <!-- icon -->
+                                    <!-- <div class="icon"> -->
+                                        <!-- <i class="fas fa-pencil-alt"></i> -->
+                                    <!-- </div> -->
+                                <!-- </div> -->
+                                <!-- <div class="search-form"> -->
+                                    <!-- search key href must be filled at the time of backend programming -->
+                            
+                                    <!-- <a href="search"><i class="fas fa-search"></i> Search</a> -->
+                                    
+                                <!-- </div> -->
+                            <!-- </form> -->
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="popular-search text-center pt-30">
+                                <ul>
+                                    <li><p>Popular search:</p></li>
+                                    <li><a href="#">#Gardening</a></li>
+                                    <li><a href="#">#Designing</a></li>
+                                    <li><a href="#">#Wall Painting</a></li>
+                                    <li><a href="#">#Electrition</a></li>
+                                    <li><a href="#">#Delivery</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--mainView Area End-->
+        <section class="our-services  section-padding40">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-8 col-lg-8">
+                        <!-- Section Tittle -->
+                        <div class="section-tittle text-center mb-80">
+                            <h2>Browse from your <span style="color:#367FFF ;"> LOCALS</span> for jobs</h2>
+                            <p>The service we provide is to the locals for small scall. Hosting jobs for local areas, number of jobs may vary but asure a short job. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row no-gutters">
+                    <div class=" col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-services">
+                            <!-- <div class="services-ion">
+                                <img src="assets/img/icon/services1.svg" alt="">
+                            </div> -->
+                            <div class="services-cap">
+                                <!-- href for below content is remaining, to be filled at the time of backend programming -->
+
+
+
+                                <h5><a href="#">Potrait Picture Designing</a></h5>
+                                <p>Artists are welcome to contribute for their potrait picture making & designing.</p>
+                                <a href="#" class="more-btn">Browse Job</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-services">
+                            <!-- <div class="services-ion">
+                                <img src="assets/img/icon/services2.svg" alt="">
+                            </div> -->
+                            <div class="services-cap">
+                              <!-- href for below content is remaining, to be filled at the time of backend programming -->
+
+
+
+
+                                <h5><a href="#">Sketch & Painting</a></h5>
+                                <p>Enthusiastic Artists are welcomed to the portal to diversify and reach beyond limits.</p>
+                                <a href="#" class="more-btn">Browse Job</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-services">
+                            <!-- <div class="services-ion">
+                                <img src="assets/img/icon/services3.svg" alt="">
+                            </div> -->
+                            <div class="services-cap">
+                            <!-- href for below content is remaining, to be filled at the time of backend programming -->
+
+
+
+
+                                <h5><a href="#">Gardening Expert</a></h5>
+                                <p>Gardening related work, expert advise, designing & plantation experts are ready to serve.</p>
+                                <a href="#" class="more-btn">Browse Job</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-services">
+                            <!-- <div class="services-ion">
+                                <img src="assets/img/icon/services4.svg" alt="">
+                            </div> -->
+                            <div class="services-cap">
+                              <!-- href for below content is remaining, to be filled at the time of backend programming -->
+
+
+
+
+                                <h5><a href="#">Electrition Expert</a></h5>
+                                <p>Youngsters & experts are presetent at your finger tip reay to serve.</p>
+                                <a href="#" class="more-btn">Browse Job</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-services">
+                            <!-- <div class="services-ion">
+                                <img src="assets/img/icon/services5.svg" alt="">
+                            </div> -->
+                            <div class="services-cap">
+                              <!-- href for below content is remaining, to be filled at the time of backend programming -->
+
+
+
+
+                                <h5><a href="#">Delivery Servicing</a></h5>
+                                <p>Make the delivery that you are not able to make. Deliver your good form home to home, office to office, home to office or anywhere our guys are ready to serve.</p>
+                                <a href="#" class="more-btn">Browse Job</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class=" col-lg-4 col-md-6 col-sm-6">
+                        <div class="single-services">
+                            <!-- <div class="services-ion">
+                                <img src="assets/img/icon/services6.svg" alt="">
+                            </div> -->
+                            <div class="services-cap">
+                              <!-- href for below content is remaining, to be filled at the time of backend programming -->
+
+
+
+
+                                <h5><a href="#">Basic Home Services</a></h5>
+                                <p>Beyond your limits explore for jobs that are not easily available.</p>
+                                <a href="#" class="more-btn">Browse Job</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <br><br><br>
+        <!--? job Post Start -->
+        <section class="job-post  pt-top section-bg2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 ">
+                        <div class="single-features mb-40 pt-60">
+                            <div class="job-post-banner">
+                                <img src="{% static 'img/gallery/job-pos-banner1.png' %}" alt="">
+                            </div>
+                            <div class="features-caption">
+                                {% if user.is_authenticated %}
+                                <h3>Post a job</h3>
+                                <p>Post your short-Job here.</p>
+                                <a href="post" class="border-btn">Post a Job</a>
+                                {% else %}
+                                <h1>login to post a job</h1>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 ">
+                        <div class="single-features  single-features2 mb-40 pt-60">
+                            <div class="job-post-banner">
+                                <img src="{% static 'img/gallery/job-pos-banner2.png' %}" alt="">
+                            </div>
+                            <div class="features-caption">
+                                <h3>Browse for job</h3>
+                                <p>Browse your short-Job here.</p>
+                                <a href="#" class="border-btn">Browse Job</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </main>
+        <footer>
+         <div class="footer-wrappper pl-100 pr-100 section-bg" data-background="{% static 'img/gallery/footer-bg.png' %}">
+            <!-- Footer Start-->
+            <div class="footer-area footer-padding">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-5 col-md-4 col-sm-6">
+                            <div class="single-footer-caption mb-50">
+                                <div class="single-footer-caption mb-30">
+                                    <!-- logo -->
+                                    <div class="footer-logo mb-25">
+                                        <a href="/"><img src="{% static 'img/logo/logo2_footer.png' %}" alt=""></a>
+                                    </div>
+                                    <div class="footer-tittle">
+                                        <div class="footer-pera">
+                                            <p>Find your Short job here or Host a job. Sometimes a host is alos a seeker, explore yourself.</p>
+                                        </div>
+                                    </div>
+                                    <!-- social -->
+                                    <!-- <div class="footer-social">
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                    </div> -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-5">
+                            <div class="single-footer-caption mb-50">
+                                <div class="footer-tittle">
+                                    <h4>Top categories</h4>
+                                    <ul>
+                                      <!-- Form href to be filled at the time of more pages creation: for host pages  -->
+                                        <li><a href="#">Designing</a></li>
+                                        <li><a href="#">Electric</a></li>
+                                        <li><a href="#">Basic Home Services</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
+                            <div class="single-footer-caption mb-50">
+                                <div class="footer-tittle">
+                                    <h4>For seeker</h4>
+                                    <ul>
+                                      <!-- Form href to be filled at the time of more page creation  -->
+
+
+                                        <li><a href="#">Wall Painting</a></li>
+                                        <li><a href="#">Electric Work</a></li>
+                                        <li><a href="#">Gardening</a></li>
+                                        <li><a href="#">Delivery Services</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-6">
+                            <div class="single-footer-caption mb-50">
+                                <div class="footer-tittle mb-50">
+                                    <h4>Subscribe newsletter</h4>
+                                </div>
+                                <!-- Form -->
+                                <div class="footer-form" >
+                                    <div id="mc_embed_signup">
+                                        <!-- form action to filled at the time of backend programming -->
+
+
+                                        <!-- <form target="_blank" action=" "
+                                        method="get" class="subscribe_form relative mail_part">
+                                        <input type="email" name="email" id="newsletter-form-email" placeholder="Email Address"
+                                        class="placeholder hide-on-focus" onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = ' Email Address '">
+                                        <div class="form-icon">
+                                            <button type="submit" name="submit" id="newsletter-submit"
+                                            class="email_icon newsletter-submit button-contactForm"><img src="{% static 'img/gallery/form.png' %}" alt=""></button>
+                                        </div>
+                                        <div class="mt-10 info"></div>
+                                    </form> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer-bottom area -->
+        <div class="footer-bottom-area">
+            <div class="container">
+                <div class="footer-border">
+                    <div class="row d-flex align-items-center">
+                        <div class="col-xl-12 ">
+                            <div class="footer-copy-right text-center">
+                                <p><!-- bottom line -->
+                                  <script>document.write(new Date().getFullYear());</script> This WebSite is a college project by <i class="fa fa-heart" aria-hidden="true"> Group number- 21</i></br>
+                                  <!-- bottom fields --></p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- Footer End-->
+      </div>
+    </footer>
+    <!-- Scroll Up -->
+    <div id="back-top" >
+        <a title="Go to Top" href="#"> <i class="fas fa-level-up-alt"></i></a>
+    </div>
+    <!-- JS here -->
+
+    <script src="{% static './js/vendor/modernizr-3.5.0.min.js' %}"></script>
+    <!-- Jquery, Popper, Bootstrap -->
+    <script src="{% static './js/vendor/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static './js/popper.min.js' %}"></script>
+    <script src="{% static './js/bootstrap.min.js' %}"></script>
+    <!-- Jquery Mobile Menu -->
+    <script src="{% static './js/jquery.slicknav.min.js' %}"></script>
+
+    <!-- Jquery Slick , Owl-Carousel Plugins -->
+    <script src="{% static './js/owl.carousel.min.js' %}"></script>
+    <script src="{% static './js/slick.min.js' %}"></script>
+    <!-- One Page, Animated-HeadLin -->
+    <script src="{% static './js/wow.min.js' %}"></script>
+    <script src="{% static './js/animated.headline.js' %}"></script>
+    <script src="{% static './js/jquery.magnific-popup.js' %}"></script>
+
+    <!-- Date Picker -->
+    <script src="{% static './js/gijgo.min.js' %}"></script>
+    <!-- Nice-select, sticky -->
+    <script src="{% static './js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static './js/jquery.sticky.js' %}"></script>
+    <!-- Progress -->
+    <script src="{% static './js/jquery.barfiller.js' %}"></script>
+
+    <!-- counter , waypoint,Hover Direction -->
+    <script src="{% static './js/jquery.counterup.min.js' %}"></script>
+    <script src="{% static './js/waypoints.min.js' %}"></script>
+    <script src="{% static './js/jquery.countdown.min.js' %}"></script>
+    <script src="{% static './js/hover-direction-snake.min.js' %}"></script>
+
+    <!-- contact js -->
+    <script src="{% static './js/contact.js' %}"></script>
+    <script src="{% static './js/jquery.form.js' %}"></script>
+    <script src="{% static './js/jquery.validate.min.js' %}"></script>
+    <script src="{% static './js/mail-script.js' %}"></script>
+    <script src="{% static './js/jquery.ajaxchimp.min.js' %}"></script>
+
+    <!-- Jquery Plugins, main Jquery -->
+    <script src="{% static './js/plugins.js' %}"></script>
+    <script src="{% static './js/main.js' %}"></script>
+  </body>
+</html>
